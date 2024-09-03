@@ -1,15 +1,9 @@
-import React from "react";
-import Details from "@/components/RComponents/Details";
+import React from 'react';
 
 export default function Home() {
-  return (
-    <main className="flex flex-col justify-center items-center">
-      <div className="flex">
-        <h1 className="font-bold text-2xl ">
-          Things I need to learn for the first month
-        </h1>
-      </div>
-      <Details />
-    </main>
-  );
+	return (
+		<main className='flex flex-col justify-center items-center'>
+			<h1 className='text-2xl text-center font-bold'>Home Page</h1>
+		</main>
+	);
 }
