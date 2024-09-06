@@ -4,17 +4,29 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ModeToggle } from '@/components/mode-toggle';
 import { Aperture, MenuIcon } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { signOut, useSession } from 'next-auth/react';
 
+import { LifeBuoy } from 'lucide-react';
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+// import { useRouter } from 'next/router';
+
 export default function Header() {
 	const pathname = usePathname();
+	const router = useRouter();
 
 	const { data: session } = useSession();
 
 	return (
 		<header className={`flex items-center justify-between h-16 px-4 md:px-6 `}>
+			{/* Small Screen */}
 			<Sheet>
 				<SheetTrigger asChild>
 					<Button variant='outline' size='icon' className='lg:hidden'>
@@ -28,6 +40,7 @@ export default function Header() {
 						<Aperture />
 						<span className='sr-only'>Acme Inc</span>
 					</Link>
+
 					<nav className='grid gap-2 py-6'>
 						<Link
 							href='/'
@@ -49,6 +62,7 @@ export default function Header() {
 				</SheetContent>
 			</Sheet>
 
+			{/* Large Screen */}
 			<nav className='flex items-center'>
 				<div className='hidden lg:flex md:gap-6 items-center'>
 					<Link href='/' prefetch={false}>
@@ -68,6 +82,30 @@ export default function Header() {
 					>
 						Questions
 					</Link>
+
+					<DropdownMenu>
+						<DropdownMenuTrigger asChild>
+							<Button variant={'link'} className='p-0 text-[16px]  text-foreground/60'>
+								Fetch Data
+							</Button>
+						</DropdownMenuTrigger>
+
+						<DropdownMenuContent className='w-56'>
+							<DropdownMenuItem>
+								<LifeBuoy className='mr-2 h-4 w-4' />
+								<Link href='/fetch-data/without-react-query' prefetch={false}>
+									Without React Query
+								</Link>
+							</DropdownMenuItem>{' '}
+							<DropdownMenuSeparator />
+							<DropdownMenuItem onClick={(e) => router.push('/fetch-data/with-react-query')}>
+								<LifeBuoy className='mr-2 h-4 w-4' />
+								<Link href='/fetch-data/with-react-query' prefetch={false}>
+									With React Query
+								</Link>
+							</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
 				</div>
 			</nav>
 			<div className='flex items-center space-x-4'>
