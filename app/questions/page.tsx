@@ -7,7 +7,7 @@ import React from 'react';
 const Questions = () => {
 	return (
 		<Tabs className='flex' defaultValue='1'>
-			<aside className='w-[20%] fixed hidden h-[calc(100vh-4rem)] shrink-0 md:sticky md:block overflow-auto overscroll-y-auto '>
+			<aside className='px-4 pb-4 w-[20%] fixed hidden h-[calc(100vh-4rem)] shrink-0 md:sticky md:block overflow-auto overscroll-y-auto '>
 				<QuestionsList />
 			</aside>
 			<Separator orientation='vertical' className='h-auto' />

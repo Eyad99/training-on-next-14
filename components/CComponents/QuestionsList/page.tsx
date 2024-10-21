@@ -9,7 +9,11 @@ const QuestionsList = () => {
 		<TabsList className='flex flex-col gap-2 items-start'>
 			{qsList?.map((list) => {
 				return (
-					<TabsTrigger key={list?.id} value={`${list?.id}`} className='text-muted-foreground data-[state=active]:text-foreground'>
+					<TabsTrigger
+						key={list?.id}
+						value={`${list?.id}`}
+						className='text-muted-foreground data-[state=active]:text-foreground data-[state=active]:font-bold'
+					>
 						<span className='hover:underline flex text-start cursor-pointer'>{list?.title}</span>
 					</TabsTrigger>
 				);

@@ -1,10 +1,12 @@
 import AsyncAndSync from './Answers/asyncAndSync';
+import ClosuresFunction from './Answers/closuresFunction';
 import DomAndVirtualDom from './Answers/domAndVirtualDom';
 import ElementAndComponent from './Answers/elementAndComponent';
 import FunctionTypes from './Answers/functionTypes';
 import Jsx from './Answers/jsx';
 import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
+import Solid from './Answers/solid';
 import State from './Answers/state';
 import UseCallBack from './Answers/useCallBack';
 
@@ -53,5 +55,20 @@ export const qsList = [
 		id: 17,
 		title: 'cypress | Jest',
 		description: 'End To End Test [E2E test (cypress)] && Automation test (Jest)',
+	},
+	{
+		id: 18,
+		title: 'Solid',
+		description: Solid,
+	},
+	{
+		id: 19,
+		title: 'Can you explain what closures are in JavaScript and why they are useful?',
+		description: ClosuresFunction,
+	},
+	{
+		id: 20,
+		title: 'How does JavaScript handle asynchronous operations?',
+		description: 'callbacks, promises, and async/await',
 	},
 ];
