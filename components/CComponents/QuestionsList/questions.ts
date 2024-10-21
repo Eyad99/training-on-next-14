@@ -2,8 +2,11 @@ import AsyncAndSync from './Answers/asyncAndSync';
 import ClosuresFunction from './Answers/closuresFunction';
 import DomAndVirtualDom from './Answers/domAndVirtualDom';
 import ElementAndComponent from './Answers/elementAndComponent';
+import ForEach from './Answers/forEach';
 import FunctionTypes from './Answers/functionTypes';
+import GeneratorFunction from './Answers/generatorFunction';
 import Jsx from './Answers/jsx';
+import Promises from './Answers/promises';
 import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
 import Solid from './Answers/solid';
@@ -70,5 +73,35 @@ export const qsList = [
 		id: 20,
 		title: 'How does JavaScript handle asynchronous operations?',
 		description: 'callbacks, promises, and async/await',
+	},
+	{
+		id: 21,
+		title: 'What are JavaScript promises, and why are they important?',
+		description: Promises,
+	},
+	{
+		id: 22,
+		title: 'Can you explain the concept of hoisting in JavaScript?',
+		description: 'Hoisting allows variables and function declarations to be processed before the actual code runs, but the way in which they are hoisted (fully or partially) depends on the type of declaration (var, let, const, or function).',
+	},
+	{
+		id: 23,
+		title: 'What is a JavaScript generator function?',
+		description: GeneratorFunction,
+	},
+	{
+		id: 24,
+		title: 'How do you use the `forEach()` method in JavaScript, and how does it differ from a standard `for` loop?',
+		description: ForEach,
+	},
+	{
+		id: 25,
+		title: 'Explain null and undefined in javascript',
+		description: 'undefined means a variable has been declared but has not yet been assigned a value, whereas null is an assignment value, meaning that a variable has been declared and given the value of null ',
+	},
+	{
+		id: 26,
+		title: ' Differentiate between imperative and declarative programming. And what kind is used in React?',
+		description: 'في البرمجة الحتمية ، يتعين علينا تحديد كل خطوة لبناء أي شيء ، مثل واجهة المستخدم. بينما في البرمجة التقريرية ، نحتاج فقط إلى وصف المنتج النهائي ، وسيقوم البرنامج بإنشائه لنا. يستغرق جهدا ووقتا أقل نسبيا.',
 	},
 ];
