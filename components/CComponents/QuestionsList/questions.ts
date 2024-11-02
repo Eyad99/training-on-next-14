@@ -9,6 +9,7 @@ import Jsx from './Answers/jsx';
 import Promises from './Answers/promises';
 import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
+import SiteMap from './Answers/siteMap';
 import Solid from './Answers/solid';
 import State from './Answers/state';
 import UseCallBack from './Answers/useCallBack';
@@ -104,4 +105,9 @@ export const qsList = [
 		title: ' Differentiate between imperative and declarative programming. And what kind is used in React?',
 		description: 'في البرمجة الحتمية ، يتعين علينا تحديد كل خطوة لبناء أي شيء ، مثل واجهة المستخدم. بينما في البرمجة التقريرية ، نحتاج فقط إلى وصف المنتج النهائي ، وسيقوم البرنامج بإنشائه لنا. يستغرق جهدا ووقتا أقل نسبيا.',
 	},
+	{
+		id: 27,
+		title: 'Sitemap',
+		description: SiteMap,
+	}
 ];
