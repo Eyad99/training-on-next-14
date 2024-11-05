@@ -1,5 +1,6 @@
 import AsyncAndSync from './Answers/asyncAndSync';
 import ClosuresFunction from './Answers/closuresFunction';
+import Constructor from './Answers/constructor';
 import DomAndVirtualDom from './Answers/domAndVirtualDom';
 import ElementAndComponent from './Answers/elementAndComponent';
 import ForEach from './Answers/forEach';
@@ -109,5 +110,10 @@ export const qsList = [
 		id: 27,
 		title: 'Sitemap',
 		description: SiteMap,
+	},
+	{
+		id: 28,
+		title: 'Constructor',
+		description: Constructor,
 	}
 ];
