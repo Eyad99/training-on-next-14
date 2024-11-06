@@ -115,5 +115,10 @@ export const qsList = [
 		id: 28,
 		title: 'Constructor',
 		description: Constructor,
+	},
+	{
+		id: 28,
+		title: 'rem and em',
+		description: "EM is relative to the parent element's font size, so if you wish to scale the element's size based on its parent's size, use EM. REM is relative to the root (HTML) font size, so if you wish to scale the element's size based on the root size, no matter what the parent size is, use REM",
 	}
 ];
