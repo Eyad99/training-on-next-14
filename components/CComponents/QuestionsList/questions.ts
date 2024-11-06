@@ -10,6 +10,7 @@ import Jsx from './Answers/jsx';
 import Promises from './Answers/promises';
 import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
+import RemAndEm from './Answers/remAndEm';
 import SiteMap from './Answers/siteMap';
 import Solid from './Answers/solid';
 import State from './Answers/state';
@@ -119,6 +120,6 @@ export const qsList = [
 	{
 		id: 28,
 		title: 'rem and em',
-		description: "EM is relative to the parent element's font size, so if you wish to scale the element's size based on its parent's size, use EM. REM is relative to the root (HTML) font size, so if you wish to scale the element's size based on the root size, no matter what the parent size is, use REM",
+		description: RemAndEm,
 	}
 ];
