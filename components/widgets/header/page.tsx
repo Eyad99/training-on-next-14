@@ -104,6 +104,18 @@ export default function Header() {
 									With React Query
 								</Link>
 							</DropdownMenuItem>
+							<DropdownMenuItem onClick={(e) => router.push('/fetch-data/users-server')}>
+								<LifeBuoy className='mr-2 h-4 w-4' />
+								<Link href='/fetch-data/users-server' prefetch={false}>
+									Server Component
+								</Link>
+							</DropdownMenuItem>
+							<DropdownMenuItem onClick={(e) => router.push('/fetch-data/server-action')}>
+								<LifeBuoy className='mr-2 h-4 w-4' />
+								<Link href='/fetch-data/server-action' prefetch={false}>
+									Server Action
+								</Link>
+							</DropdownMenuItem>
 						</DropdownMenuContent>
 					</DropdownMenu>
 				</div>
