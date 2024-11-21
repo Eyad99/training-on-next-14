@@ -14,6 +14,7 @@ import RemAndEm from './Answers/remAndEm';
 import SiteMap from './Answers/siteMap';
 import Solid from './Answers/solid';
 import State from './Answers/state';
+import Typescript from './Answers/typescript';
 import UseCallBack from './Answers/useCallBack';
 
 export const qsList = [
@@ -46,7 +47,7 @@ export const qsList = [
 		title: 'Diffrent between local storage and session',
 		description: 'comming soon ...',
 	},
-  {
+	{
 		id: 11,
 		title: 'What the diffrent between cookie and httpOnlyCookie',
 		description: 'comming soon ...',
@@ -54,7 +55,7 @@ export const qsList = [
 	{ id: 12, title: 'Key words in js', description: 'comming soon ...' },
 	{ id: 13, title: 'Why using js in web', description: 'comming soon ...' },
 	{ id: 14, title: 'What js', description: 'comming soon ...' },
-	
+
 	{ id: 15, title: 'Automation ui', description: 'comming soon ...' },
 	{ id: 16, title: 'Fragment', description: 'comming soon ...' },
 	{
@@ -85,7 +86,8 @@ export const qsList = [
 	{
 		id: 22,
 		title: 'Can you explain the concept of hoisting in JavaScript?',
-		description: 'Hoisting allows variables and function declarations to be processed before the actual code runs, but the way in which they are hoisted (fully or partially) depends on the type of declaration (var, let, const, or function).',
+		description:
+			'Hoisting allows variables and function declarations to be processed before the actual code runs, but the way in which they are hoisted (fully or partially) depends on the type of declaration (var, let, const, or function).',
 	},
 	{
 		id: 23,
@@ -100,12 +102,14 @@ export const qsList = [
 	{
 		id: 25,
 		title: 'Explain null and undefined in javascript',
-		description: 'undefined means a variable has been declared but has not yet been assigned a value, whereas null is an assignment value, meaning that a variable has been declared and given the value of null ',
+		description:
+			'undefined means a variable has been declared but has not yet been assigned a value, whereas null is an assignment value, meaning that a variable has been declared and given the value of null ',
 	},
 	{
 		id: 26,
 		title: ' Differentiate between imperative and declarative programming. And what kind is used in React?',
-		description: 'في البرمجة الحتمية ، يتعين علينا تحديد كل خطوة لبناء أي شيء ، مثل واجهة المستخدم. بينما في البرمجة التقريرية ، نحتاج فقط إلى وصف المنتج النهائي ، وسيقوم البرنامج بإنشائه لنا. يستغرق جهدا ووقتا أقل نسبيا.',
+		description:
+			'في البرمجة الحتمية ، يتعين علينا تحديد كل خطوة لبناء أي شيء ، مثل واجهة المستخدم. بينما في البرمجة التقريرية ، نحتاج فقط إلى وصف المنتج النهائي ، وسيقوم البرنامج بإنشائه لنا. يستغرق جهدا ووقتا أقل نسبيا.',
 	},
 	{
 		id: 27,
@@ -118,8 +122,13 @@ export const qsList = [
 		description: Constructor,
 	},
 	{
-		id: 28,
+		id: 29,
 		title: 'rem and em',
 		description: RemAndEm,
-	}
+	},
+	{
+		id: 30,
+		title: 'Typescript',
+		description: Typescript,
+	},
 ];
