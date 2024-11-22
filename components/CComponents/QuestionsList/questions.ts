@@ -6,11 +6,13 @@ import ElementAndComponent from './Answers/elementAndComponent';
 import ForEach from './Answers/forEach';
 import FunctionTypes from './Answers/functionTypes';
 import GeneratorFunction from './Answers/generatorFunction';
+import ImageMiddleware from './Answers/ImageMiddleware';
 import Jsx from './Answers/jsx';
 import Promises from './Answers/promises';
 import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
 import RemAndEm from './Answers/remAndEm';
+import ServiceWorkerCom from './Answers/ServiceWorkerCom';
 import SiteMap from './Answers/siteMap';
 import Solid from './Answers/solid';
 import State from './Answers/state';
@@ -130,5 +132,15 @@ export const qsList = [
 		id: 30,
 		title: 'Typescript',
 		description: Typescript,
+	},
+	{
+		id: 31,
+		title: 'Service Worker',
+		description: ServiceWorkerCom,
+	},
+	{
+		id: 32,
+		title: 'Image Middleware',
+		description: ImageMiddleware,
 	},
 ];

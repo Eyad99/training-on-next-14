@@ -143,11 +143,11 @@ class Bmw extends Car {
 	override getCarType(): void {
 		// super.getCarType(); //Speed of normal car is 1000
 		console.log("Speed of normal car is {this.speed}");
- 	}
-}
+		}
+		}
 
-class Kea extends Car {
-	constructor(public name: string, public speed: number) {
+		class Kea extends Car {
+			constructor(public name: string, public speed: number) {
 		super(name);
 	}
 	override getCarType(): void {
@@ -155,11 +155,11 @@ class Kea extends Car {
 		console.log('Speed of normal car is 3000');
 		this.speed = 3000;
 	}
-}
-
-const carOne = new Bmw('Mbw', 2000);
+	}
+	
+	const carOne = new Bmw('Mbw', 2000);
 console.log(carOne.getCarType());
- 
+
                         `}
 				/>
 			</div>
@@ -175,8 +175,54 @@ console.log(carOne.getCarType());
 
 console.log(returnValue<number>(1))
 console.log(returnValue<string>("val"))
-                    `}
+`}
 				/>
+			</div>
+
+			<div className='flex flex-col'>
+				<h4 className='font-bold text-3xl'>Omit</h4>
+				<span className='text-muted-foreground'>
+					تُستخدم لإنشاء نوع جديد عن طريق استبعاد خاصية أو أكثر من نوع موجود. يُفيد ذلك عندما تريد استخدام جزء من واجهة أو نوع ولكن بدون بعض
+					الخصائص المحددة.
+				</span>
+
+				<span className='text-muted-foreground'></span>
+
+				<CodeMirrorEditor
+					value={`
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  password: string;
+}
+
+type UserWithoutPassword = Omit<User, 'password'>;
+
+const user: UserWithoutPassword = {
+	id: 1,
+	name: "Eyad",
+	email: "eyad@example.com",
+	};
+
+type UserWithoutSensitiveInfo = Omit<User, 'password' | 'email'>;
+
+const user: UserWithoutSensitiveInfo = {
+	id: 1,
+	name: "Eyad",
+ 	};
+						`}
+				/>
+			</div>
+
+			<div className='flex flex-col'>
+				<span className='text-muted-foreground'>const data = readOnly [1,2]</span>
+				<span className='text-muted-foreground'>HtmlElement / HtmlImageElement</span>
+				<span className='text-muted-foreground'>Union Type / string | number</span>
+				<span className='text-muted-foreground'>Intersection Type / string & interfaceData</span>
+				<span className='text-muted-foreground'>{'pe Annotation => conat obj = {"name":string} : {"name":eyad}'}</span>
+				<span className='text-muted-foreground'>frunction inside the constructor it's a [property]</span>
+				<span className='text-muted-foreground'>function outside the constructor it's a [method]</span>
 			</div>
 		</section>
 	);
