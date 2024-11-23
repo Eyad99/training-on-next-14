@@ -21,8 +21,8 @@ const requestInterceptor = (config: RequestInit): RequestInit => {
 };
 
 // Response Interceptor: Handle Errors
-const responseInterceptor = async (response: Response): Promise<ApiResponse> => {
- 	if (!response.ok) {
+const responseInterceptor = async (response: Response): Promise<ApiResponse | any> => {
+	if (!response.ok) {
 		const errorData = await response.json();
 
 		if (response.status === 401) {
@@ -32,12 +32,11 @@ const responseInterceptor = async (response: Response): Promise<ApiResponse> => 
 		}
 		return Promise.reject(errorData);
 	}
-
 	return response.json();
 };
 
 // Helper function for making API requests
-const apiRequest = async (url: string, config: RequestInit = {}): Promise<ApiResponse> => {
+const apiRequest = async (url: string, config: RequestInit = {}): Promise<ApiResponse | any> => {
 	const finalConfig = requestInterceptor({
 		...config,
 		headers: {

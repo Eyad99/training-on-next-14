@@ -12,6 +12,7 @@ const ListUsersWithReactQuery = () => {
 		refetchOnWindowFocus: false,
 		retry: 1,
 	});
+	console.log('datadatadata', data);
 
 	if (isLoading) return <>Loading....</>;
 	return (
