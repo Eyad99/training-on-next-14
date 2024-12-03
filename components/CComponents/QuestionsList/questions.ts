@@ -7,7 +7,9 @@ import ForEach from './Answers/forEach';
 import FunctionTypes from './Answers/functionTypes';
 import GeneratorFunction from './Answers/generatorFunction';
 import ImageMiddleware from './Answers/ImageMiddleware';
+import IndexedDb from './Answers/indexedDb';
 import Jsx from './Answers/jsx';
+import Memo from './Answers/memo';
 import Promises from './Answers/promises';
 import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
@@ -142,5 +144,15 @@ export const qsList = [
 		id: 32,
 		title: 'Image Middleware',
 		description: ImageMiddleware,
+	},
+	{
+		id: 33,
+		title: 'IndexedDB',
+		description: IndexedDb,
+	},
+	{
+		id: 34,
+		title: 'Memo & UseMemo',
+		description: Memo,
 	},
 ];

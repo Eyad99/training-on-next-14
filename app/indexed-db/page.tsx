@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { PenBox, Trash } from 'lucide-react';
 import { useIndexedDB } from '@/hooks/useIndexedDB';
 import { useFormik } from 'formik';
 import { Database } from '@/utils/constants';
 import { Button } from '@/components/ui/button';
 import TextField from '@/components/reusable/fields/TextField';
 import * as yup from 'yup';
-import { Pen, PenBox, Trash } from 'lucide-react';
 
 const IndexedDb = () => {
 	const { putValue, getValue, getAllValue, updateValue, deleteValue, isDBConnecting } = useIndexedDB(Database.name, Database.userTable);
