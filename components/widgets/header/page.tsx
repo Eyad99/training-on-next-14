@@ -58,6 +58,53 @@ export default function Header() {
 						>
 							Questions
 						</Link>
+						<Link
+							href='/indexed-db'
+							className={`transition-colors hover:text-foreground/80 ${
+								pathname === '/indexed-db' ? 'text-foreground' : 'text-foreground/60'
+							}`}
+							prefetch={false}
+						>
+							IndexedDB
+						</Link>
+
+						<DropdownMenu>
+							<DropdownMenuTrigger asChild>
+								<Button variant={'link'} className='p-0 h-fit text-[16px] flex justify-start text-foreground/60'>
+									Fetch Data
+								</Button>
+							</DropdownMenuTrigger>
+
+							<DropdownMenuContent className='w-56'>
+								<DropdownMenuItem>
+									<LifeBuoy className='mr-2 h-4 w-4' />
+									<Link href='/fetch-data/without-react-query' prefetch={false}>
+										Without React Query
+									</Link>
+								</DropdownMenuItem>{' '}
+								<DropdownMenuSeparator />
+								<DropdownMenuItem onClick={(e) => router.push('/fetch-data/with-react-query')}>
+									<LifeBuoy className='mr-2 h-4 w-4' />
+									<Link href='/fetch-data/with-react-query' prefetch={false}>
+										With React Query
+									</Link>
+								</DropdownMenuItem>
+								<DropdownMenuSeparator />
+								<DropdownMenuItem onClick={(e) => router.push('/fetch-data/users-server')}>
+									<LifeBuoy className='mr-2 h-4 w-4' />
+									<Link href='/fetch-data/users-server' prefetch={false}>
+										Server Component
+									</Link>
+								</DropdownMenuItem>
+								<DropdownMenuSeparator />
+								<DropdownMenuItem onClick={(e) => router.push('/fetch-data/server-action')}>
+									<LifeBuoy className='mr-2 h-4 w-4' />
+									<Link href='/fetch-data/server-action' prefetch={false}>
+										Server Action
+									</Link>
+								</DropdownMenuItem>
+							</DropdownMenuContent>
+						</DropdownMenu>
 					</nav>
 				</SheetContent>
 			</Sheet>
@@ -83,6 +130,16 @@ export default function Header() {
 						Questions
 					</Link>
 
+					<Link
+						href='/indexed-db'
+						className={`transition-colors hover:text-foreground/80 ${
+							pathname === '/indexed-db' ? 'text-foreground' : 'text-foreground/60'
+						}`}
+						prefetch={false}
+					>
+						IndexedDB
+					</Link>
+
 					<DropdownMenu>
 						<DropdownMenuTrigger asChild>
 							<Button variant={'link'} className='p-0 text-[16px]  text-foreground/60'>
@@ -104,12 +161,14 @@ export default function Header() {
 									With React Query
 								</Link>
 							</DropdownMenuItem>
+							<DropdownMenuSeparator />
 							<DropdownMenuItem onClick={(e) => router.push('/fetch-data/users-server')}>
 								<LifeBuoy className='mr-2 h-4 w-4' />
 								<Link href='/fetch-data/users-server' prefetch={false}>
 									Server Component
 								</Link>
 							</DropdownMenuItem>
+							<DropdownMenuSeparator />
 							<DropdownMenuItem onClick={(e) => router.push('/fetch-data/server-action')}>
 								<LifeBuoy className='mr-2 h-4 w-4' />
 								<Link href='/fetch-data/server-action' prefetch={false}>
