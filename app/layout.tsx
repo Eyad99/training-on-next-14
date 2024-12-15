@@ -28,7 +28,7 @@ export default function RootLayout({
 				<head>
 					<link rel='icon' href='/next.svg' sizes='any' />
 				</head>
-				<body className={inter.className + ' !overflow-hidden'}>
+				<body className={inter.className}>
 					<ReactQueryProvider>
 						<HydrationBoundary state={dehydrate(queryClient)}>
 							<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>

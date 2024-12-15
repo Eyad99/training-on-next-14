@@ -1,18 +1,28 @@
 import QuestionsAnswers from '@/components/CComponents/QuestionsList/Answers/page';
 import QuestionsList from '@/components/CComponents/QuestionsList/page';
-import { Separator } from '@/components/ui/separator';
 import { Tabs } from '@radix-ui/react-tabs';
 import React from 'react';
 
 const Questions = () => {
 	return (
-		<Tabs className='flex' defaultValue='1'>
-			<aside className='px-4 pb-4 w-[20%] fixed hidden h-[calc(100vh-4rem)] shrink-0 md:sticky md:block overflow-auto overscroll-y-auto '>
+		// <Tabs className='flex' defaultValue='1'>
+		// 	<aside className='fixed hidden h-[calc(100vh-4rem)] w-[20%] shrink-0 border-r md:sticky md:block overflow-auto'>
+		// 		<QuestionsList />
+		// 	</aside>
+
+		// 	<section className=' md:w-[80%] w-full px-2 bg-green-400'>
+		// 		<QuestionsAnswers />
+		// 	</section>
+		// </Tabs>
+
+		<Tabs className='flex h-[100vh]'>
+			{/* Fixed Aside */}
+			<aside className='fixed hidden h-[calc(100vh-4rem)] w-[20%] shrink-0 border-r md:block overflow-auto'>
 				<QuestionsList />
 			</aside>
-			<Separator orientation='vertical' className='h-auto' />
 
-			<section className='w-[80%] px-2'>
+			{/* Content Section */}
+			<section className='md:w-[80%] w-full px-2 bg-green-400'>
 				<QuestionsAnswers />
 			</section>
 		</Tabs>
