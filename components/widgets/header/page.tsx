@@ -16,7 +16,6 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-// import { useRouter } from 'next/router';
 
 export default function Header() {
 	const pathname = usePathname();
@@ -25,7 +24,7 @@ export default function Header() {
 	const { data: session } = useSession();
 
 	return (
-		<header className={`flex items-center justify-between h-16 px-4 md:px-6 `}>
+		<header className={`flex sticky top-0 bg-white z-10 items-center justify-between h-16 px-4 md:px-6 `}>
 			{/* Small Screen */}
 			<Sheet>
 				<SheetTrigger asChild>
