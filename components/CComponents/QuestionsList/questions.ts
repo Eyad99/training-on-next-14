@@ -1,4 +1,5 @@
 import AsyncAndSync from './Answers/asyncAndSync';
+import CherryPick from './Answers/cherryPick';
 import ClosuresFunction from './Answers/closuresFunction';
 import Constructor from './Answers/constructor';
 import DomAndVirtualDom from './Answers/domAndVirtualDom';
@@ -10,6 +11,7 @@ import ImageMiddleware from './Answers/ImageMiddleware';
 import IndexedDb from './Answers/indexedDb';
 import Jsx from './Answers/jsx';
 import Memo from './Answers/memo';
+import OocssAndBem from './Answers/oocssAndBem';
 import Promises from './Answers/promises';
 import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
@@ -20,6 +22,7 @@ import Solid from './Answers/solid';
 import State from './Answers/state';
 import Typescript from './Answers/typescript';
 import UseCallBack from './Answers/useCallBack';
+import WebSafty from './Answers/webSafty';
 
 export const qsList = [
 	{
@@ -154,5 +157,20 @@ export const qsList = [
 		id: 34,
 		title: 'Memo & UseMemo',
 		description: Memo,
+	},
+	{
+		id: 35,
+		title: 'oocss vs bem',
+		description: OocssAndBem,
+	},
+	{
+		id: 36,
+		title: 'Cherry-Pick',
+		description: CherryPick,
+	},
+	{
+		id: 37,
+		title: 'Web Safty',
+		description: WebSafty  ,
 	},
 ];

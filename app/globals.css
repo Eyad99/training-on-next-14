@@ -64,6 +64,16 @@
 		@apply bg-background text-foreground;
 	}
 
+	ul,
+	ol {
+		list-style: revert;
+	}
+	table,
+	th,
+	td {
+		border: 1px solid black;
+	}
+
 	@layer utilities {
 		/* Hide scrollbar for Chrome, Safari and Opera */
 		.no-scrollbar::-webkit-scrollbar {
