@@ -12,6 +12,7 @@ import IndexedDb from './Answers/indexedDb';
 import Jsx from './Answers/jsx';
 import Memo from './Answers/memo';
 import OocssAndBem from './Answers/oocssAndBem';
+import OptimizationTools from './Answers/OptimizationTools';
 import Promises from './Answers/promises';
 import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
@@ -172,5 +173,10 @@ export const qsList = [
 		id: 37,
 		title: 'Web Safty',
 		description: WebSafty  ,
+	},
+	{
+		id: 38,
+		title: 'Optimization Tools',
+		description: OptimizationTools,
 	},
 ];
