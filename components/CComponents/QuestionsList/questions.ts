@@ -7,6 +7,7 @@ import ElementAndComponent from './Answers/elementAndComponent';
 import ForEach from './Answers/forEach';
 import FunctionTypes from './Answers/functionTypes';
 import GeneratorFunction from './Answers/generatorFunction';
+import GraphQl from './Answers/graphQl';
 import ImageMiddleware from './Answers/ImageMiddleware';
 import IndexedDb from './Answers/indexedDb';
 import Jsx from './Answers/jsx';
@@ -179,4 +180,10 @@ export const qsList = [
 		title: 'Optimization Tools',
 		description: OptimizationTools,
 	},
+	{
+		id: 39,
+		title: 'GraphQl',
+		description: GraphQl,
+	},
+	
 ];
