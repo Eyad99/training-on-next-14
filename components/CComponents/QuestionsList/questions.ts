@@ -13,11 +13,12 @@ import IndexedDb from './Answers/indexedDb';
 import Jsx from './Answers/jsx';
 import Memo from './Answers/memo';
 import OocssAndBem from './Answers/oocssAndBem';
-import OptimizationTools from './Answers/OptimizationTools';
-import Promises from './Answers/promises';
+import OptimizationTools from './Answers/optimizationTools';
+ import Promises from './Answers/promises';
 import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
 import RemAndEm from './Answers/remAndEm';
+import ServerComponentAndServerAction from './Answers/serverComponentAndServerAction';
 import ServiceWorkerCom from './Answers/ServiceWorkerCom';
 import SiteMap from './Answers/siteMap';
 import Solid from './Answers/solid';
@@ -184,6 +185,11 @@ export const qsList = [
 		id: 39,
 		title: 'GraphQl',
 		description: GraphQl,
+	},
+	{
+		id: 40,
+		title: 'ServerComponentAndServerAction',
+		description: ServerComponentAndServerAction,
 	},
 	
 ];
