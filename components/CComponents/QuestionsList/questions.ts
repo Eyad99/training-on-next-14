@@ -29,6 +29,7 @@ import Typescript from './Answers/typescript';
 import UseCallBack from './Answers/useCallBack';
 import WebSafty from './Answers/webSafty';
 import CacheInFetchMethod from './Answers/cacheInFetchMethod';
+import HooksInReact from './Answers/hooksInReact';
 
 export const qsList = [
 	{
@@ -208,5 +209,10 @@ export const qsList = [
 		id: 43,
 		title: 'Cache in fetch method',
 		description: CacheInFetchMethod,
+	},
+	{
+		id: 44,
+		title: 'New Hooks In React',
+		description: HooksInReact,
 	},
 ];
