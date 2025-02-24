@@ -74,6 +74,11 @@
 		border: 1px solid black;
 	}
 
+	.text-rtl {
+		direction: rtl; 
+		unicode-bidi: embed; 
+	  }
+
 	@layer utilities {
 		/* Hide scrollbar for Chrome, Safari and Opera */
 		.no-scrollbar::-webkit-scrollbar {

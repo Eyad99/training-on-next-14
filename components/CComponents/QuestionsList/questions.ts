@@ -14,7 +14,7 @@ import Jsx from './Answers/jsx';
 import Memo from './Answers/memo';
 import OocssAndBem from './Answers/oocssAndBem';
 import OptimizationTools from './Answers/optimizationTools';
- import Promises from './Answers/promises';
+import Promises from './Answers/promises';
 import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
 import RemAndEm from './Answers/remAndEm';
@@ -22,10 +22,13 @@ import ServerComponentAndServerAction from './Answers/serverComponentAndServerAc
 import ServiceWorkerCom from './Answers/ServiceWorkerCom';
 import SiteMap from './Answers/siteMap';
 import Solid from './Answers/solid';
+import RenderingPatterns from './Answers/renderingPatterns';
 import State from './Answers/state';
+import TreeShaking from './Answers/treeShaking';
 import Typescript from './Answers/typescript';
 import UseCallBack from './Answers/useCallBack';
 import WebSafty from './Answers/webSafty';
+import CacheInFetchMethod from './Answers/cacheInFetchMethod';
 
 export const qsList = [
 	{
@@ -174,7 +177,7 @@ export const qsList = [
 	{
 		id: 37,
 		title: 'Web Safty',
-		description: WebSafty  ,
+		description: WebSafty,
 	},
 	{
 		id: 38,
@@ -191,5 +194,19 @@ export const qsList = [
 		title: 'ServerComponentAndServerAction',
 		description: ServerComponentAndServerAction,
 	},
-	
+	{
+		id: 41,
+		title: 'Tree Shaking',
+		description: TreeShaking,
+	},
+	{
+		id: 42,
+		title: 'Rendering Patterns',
+		description: RenderingPatterns,
+	},
+	{
+		id: 43,
+		title: 'Cache in fetch method',
+		description: CacheInFetchMethod,
+	},
 ];
