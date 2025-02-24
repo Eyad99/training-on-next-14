@@ -6,8 +6,8 @@ const HooksInReact = () => {
 			<div className='flex flex-col gap-4'>
 				<h4 className='font-bold text-3xl text-rtl'>use()</h4>
 				<span className='text-muted-foreground text-rtl'>
-					يُستخدم للتعامل مع القيم غير المتزامنة (مثل الوعود Promises) داخل المكونات. يُمكّن المطورين من كتابة تعليمات برمجية متزامنة المظهر
-					عند التعامل مع العمليات غير المتزامنة.
+					يُستخدم للتعامل مع القيم غير المتزامنة (مثل الوعود Promises - Context) داخل المكونات. يُمكّن المطورين من كتابة تعليمات برمجية
+					متزامنة المظهر عند التعامل مع العمليات غير المتزامنة.
 				</span>
 				<span className='text-muted-foreground text-rtl'>
 					يمكن استخدامه لانتظار نتيجة وعد (Promise) داخل المكون، مما يُسهل التعامل مع البيانات المُحمّلة بشكل غير متزامن.
