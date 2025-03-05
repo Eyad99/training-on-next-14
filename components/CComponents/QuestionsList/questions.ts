@@ -30,6 +30,7 @@ import UseCallBack from './Answers/useCallBack';
 import WebSafty from './Answers/webSafty';
 import CacheInFetchMethod from './Answers/cacheInFetchMethod';
 import HooksInReact from './Answers/hooksInReact';
+import RealTimeApps from './Answers/realTimeApps';
 
 export const qsList = [
 	{
@@ -214,5 +215,10 @@ export const qsList = [
 		id: 44,
 		title: 'New Hooks In React',
 		description: HooksInReact,
+	},
+	{
+		id: 45,
+		title: 'Web socket & Pusher',
+		description: RealTimeApps,
 	},
 ];
