@@ -23,6 +23,10 @@ const ElementAndComponent = () => {
 						const element = React.createElement('span', null, 'Hello, World!');
 					</span>
 				</div>
+				<div className='flex flex-col px-4'>
+					<span className='text-muted-foreground text-rtl'>ما يظهر على الشاشة" = Object يمثل DOM Tag (immutable)</span>
+					<span className='text-muted-foreground text-rtl'>مثل: div, h1</span>
+				</div>
 			</div>
 			<div className='flex flex-col'>
 				<h4 className='font-bold text-3xl'>React Components</h4>
@@ -31,6 +35,10 @@ const ElementAndComponent = () => {
 					describing what should appear on the screen. Components are reusable pieces of UI that can be composed together to build more
 					complex UIs.
 				</span>
+				<div className='flex flex-col px-4'>
+					<span className='text-muted-foreground text-rtl'>الكيان الذي ينشئ العناصر" = Function أو Class ترجع Elements.</span>
+					<span className='text-muted-foreground text-rtl'>مثل: App(), Navbar()</span>
+				</div>
 			</div>
 		</section>
 	);

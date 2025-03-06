@@ -19,8 +19,7 @@ import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
 import RemAndEm from './Answers/remAndEm';
 import ServerComponentAndServerAction from './Answers/serverComponentAndServerAction';
-import ServiceWorkerCom from './Answers/ServiceWorkerCom';
-import SiteMap from './Answers/siteMap';
+ import SiteMap from './Answers/siteMap';
 import Solid from './Answers/solid';
 import RenderingPatterns from './Answers/renderingPatterns';
 import State from './Answers/state';
@@ -31,6 +30,8 @@ import WebSafty from './Answers/webSafty';
 import CacheInFetchMethod from './Answers/cacheInFetchMethod';
 import HooksInReact from './Answers/hooksInReact';
 import RealTimeApps from './Answers/realTimeApps';
+import TestWays from './Answers/testWays';
+import ServiceWorkerCom from './Answers/ServiceWorkerCom';
 
 export const qsList = [
 	{
@@ -76,7 +77,7 @@ export const qsList = [
 	{
 		id: 17,
 		title: 'cypress | Jest',
-		description: 'End To End Test [E2E test (cypress)] && Automation test (Jest)',
+		description: TestWays,
 	},
 	{
 		id: 18,
