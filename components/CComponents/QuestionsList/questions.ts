@@ -31,7 +31,8 @@ import CacheInFetchMethod from './Answers/cacheInFetchMethod';
 import HooksInReact from './Answers/hooksInReact';
 import RealTimeApps from './Answers/realTimeApps';
 import TestWays from './Answers/testWays';
-import ServiceWorkerCom from './Answers/ServiceWorkerCom';
+  import CiCd from './Answers/ciCd';
+import ServiceWorkerCom from './Answers/serviceWorkerCom';
 
 export const qsList = [
 	{
@@ -221,5 +222,10 @@ export const qsList = [
 		id: 45,
 		title: 'Web socket & Pusher',
 		description: RealTimeApps,
+	},
+	{
+		id: 46,
+		title: 'CI & CD',
+		description: CiCd,
 	},
 ];
