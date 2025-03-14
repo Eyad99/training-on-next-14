@@ -1,14 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
+import { signOut, useSession } from 'next-auth/react';
+import { Aperture, MenuIcon, LifeBuoy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ModeToggle } from '@/components/mode-toggle';
-import { Aperture, MenuIcon } from 'lucide-react';
-import { usePathname, useRouter } from 'next/navigation';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { signOut, useSession } from 'next-auth/react';
-
-import { LifeBuoy } from 'lucide-react';
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -17,15 +16,65 @@ import {
 	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-export default function Header() {
-	const pathname = usePathname();
-	const router = useRouter();
+const navLinks = [
+	{ href: '/', label: 'Home' },
+	{ href: '/questions', label: 'Questions' },
+	{ href: '/indexed-db', label: 'IndexedDB' },
+	{ href: '/english', label: 'English' },
+];
 
+const fetchDataLinks = [
+	{ href: '/fetch-data/without-react-query', label: 'Without React Query' },
+	{ href: '/fetch-data/with-react-query', label: 'With React Query' },
+	{ href: '/fetch-data/users-server', label: 'Server Component' },
+	{ href: '/fetch-data/server-action', label: 'Server Action' },
+];
+
+function NavLink({ href, label }: { href: string; label: string }) {
+	const pathname = usePathname();
+	return (
+		<Link
+			href={href}
+			className={`transition-colors hover:text-foreground/80 ${pathname === href ? 'text-foreground' : 'text-foreground/60'}`}
+			prefetch={false}
+		>
+			{label}
+		</Link>
+	);
+}
+
+function FetchDataMenu() {
+	const router = useRouter();
+	return (
+		<DropdownMenu>
+			<DropdownMenuTrigger asChild>
+				<Button variant='link' className='p-0 h-fit text-[16px] text-foreground/60'>
+					Fetch Data
+				</Button>
+			</DropdownMenuTrigger>
+			<DropdownMenuContent className='w-56'>
+				{fetchDataLinks.map((link, index) => (
+					<>
+						<DropdownMenuItem key={link.href} onClick={() => router.push(link.href)}>
+							<LifeBuoy className='mr-2 h-4 w-4' />
+							<Link href={link.href} prefetch={false}>
+								{link.label}
+							</Link>
+						</DropdownMenuItem>
+						{index < fetchDataLinks.length - 1 && <DropdownMenuSeparator />}
+					</>
+				))}
+			</DropdownMenuContent>
+		</DropdownMenu>
+	);
+}
+
+export default function Header() {
 	const { data: session } = useSession();
 
 	return (
-		<header className={`flex sticky top-0 bg-white z-10 items-center justify-between h-16 px-4 md:px-6 `}>
-			{/* Small Screen */}
+		<header className='flex sticky top-0 shadow-md z-10 items-center justify-between h-16 px-4 md:px-6'>
+			{/* Small Screen Navigation */}
 			<Sheet>
 				<SheetTrigger asChild>
 					<Button variant='outline' size='icon' className='lg:hidden'>
@@ -33,164 +82,45 @@ export default function Header() {
 						<span className='sr-only'>Toggle navigation menu</span>
 					</Button>
 				</SheetTrigger>
-
 				<SheetContent side='left'>
 					<Link href='/' className='mr-6 flex items-center' prefetch={false}>
 						<Aperture />
-						<span className='sr-only'>Acme Inc</span>
+						<span className='sr-only'>Es logo</span>
 					</Link>
 
 					<nav className='grid gap-2 py-6'>
-						<Link
-							href='/'
-							className={`transition-colors hover:text-foreground/80 ${pathname === '/' ? 'text-foreground' : 'text-foreground/60'}`}
-							prefetch={false}
-						>
-							Home
-						</Link>
-						<Link
-							href='/questions'
-							className={`transition-colors hover:text-foreground/80 ${
-								pathname === '/questions' ? 'text-foreground' : 'text-foreground/60'
-							}`}
-							prefetch={false}
-						>
-							Questions
-						</Link>
-						<Link
-							href='/indexed-db'
-							className={`transition-colors hover:text-foreground/80 ${
-								pathname === '/indexed-db' ? 'text-foreground' : 'text-foreground/60'
-							}`}
-							prefetch={false}
-						>
-							IndexedDB
-						</Link>
-
-						<DropdownMenu>
-							<DropdownMenuTrigger asChild>
-								<Button variant={'link'} className='p-0 h-fit text-[16px] flex justify-start text-foreground/60'>
-									Fetch Data
-								</Button>
-							</DropdownMenuTrigger>
-
-							<DropdownMenuContent className='w-56'>
-								<DropdownMenuItem>
-									<LifeBuoy className='mr-2 h-4 w-4' />
-									<Link href='/fetch-data/without-react-query' prefetch={false}>
-										Without React Query
-									</Link>
-								</DropdownMenuItem>{' '}
-								<DropdownMenuSeparator />
-								<DropdownMenuItem onClick={(e) => router.push('/fetch-data/with-react-query')}>
-									<LifeBuoy className='mr-2 h-4 w-4' />
-									<Link href='/fetch-data/with-react-query' prefetch={false}>
-										With React Query
-									</Link>
-								</DropdownMenuItem>
-								<DropdownMenuSeparator />
-								<DropdownMenuItem onClick={(e) => router.push('/fetch-data/users-server')}>
-									<LifeBuoy className='mr-2 h-4 w-4' />
-									<Link href='/fetch-data/users-server' prefetch={false}>
-										Server Component
-									</Link>
-								</DropdownMenuItem>
-								<DropdownMenuSeparator />
-								<DropdownMenuItem onClick={(e) => router.push('/fetch-data/server-action')}>
-									<LifeBuoy className='mr-2 h-4 w-4' />
-									<Link href='/fetch-data/server-action' prefetch={false}>
-										Server Action
-									</Link>
-								</DropdownMenuItem>
-							</DropdownMenuContent>
-						</DropdownMenu>
+						{navLinks.map((link) => (
+							<NavLink key={link.href} href={link.href} label={link.label} />
+						))}
+						<FetchDataMenu />
 					</nav>
 				</SheetContent>
 			</Sheet>
 
-			{/* Large Screen */}
-			<nav className='flex items-center'>
-				<div className='hidden lg:flex md:gap-6 items-center'>
-					<Link href='/' prefetch={false}>
-						<Aperture />
-					</Link>
-					<Link
-						href='/'
-						className={`transition-colors hover:text-foreground/80 ${pathname === '/' ? 'text-foreground' : 'text-foreground/60'}`}
-						prefetch={false}
-					>
-						Home
-					</Link>
-					<Link
-						href='/questions'
-						className={`transition-colors hover:text-foreground/80 ${pathname === '/questions' ? 'text-foreground' : 'text-foreground/60'}`}
-						prefetch={false}
-					>
-						Questions
-					</Link>
-
-					<Link
-						href='/indexed-db'
-						className={`transition-colors hover:text-foreground/80 ${
-							pathname === '/indexed-db' ? 'text-foreground' : 'text-foreground/60'
-						}`}
-						prefetch={false}
-					>
-						IndexedDB
-					</Link>
-
-					<DropdownMenu>
-						<DropdownMenuTrigger asChild>
-							<Button variant={'link'} className='p-0 text-[16px]  text-foreground/60'>
-								Fetch Data
-							</Button>
-						</DropdownMenuTrigger>
-
-						<DropdownMenuContent className='w-56'>
-							<DropdownMenuItem>
-								<LifeBuoy className='mr-2 h-4 w-4' />
-								<Link href='/fetch-data/without-react-query' prefetch={false}>
-									Without React Query
-								</Link>
-							</DropdownMenuItem>{' '}
-							<DropdownMenuSeparator />
-							<DropdownMenuItem onClick={(e) => router.push('/fetch-data/with-react-query')}>
-								<LifeBuoy className='mr-2 h-4 w-4' />
-								<Link href='/fetch-data/with-react-query' prefetch={false}>
-									With React Query
-								</Link>
-							</DropdownMenuItem>
-							<DropdownMenuSeparator />
-							<DropdownMenuItem onClick={(e) => router.push('/fetch-data/users-server')}>
-								<LifeBuoy className='mr-2 h-4 w-4' />
-								<Link href='/fetch-data/users-server' prefetch={false}>
-									Server Component
-								</Link>
-							</DropdownMenuItem>
-							<DropdownMenuSeparator />
-							<DropdownMenuItem onClick={(e) => router.push('/fetch-data/server-action')}>
-								<LifeBuoy className='mr-2 h-4 w-4' />
-								<Link href='/fetch-data/server-action' prefetch={false}>
-									Server Action
-								</Link>
-							</DropdownMenuItem>
-						</DropdownMenuContent>
-					</DropdownMenu>
-				</div>
+			{/* Large Screen Navigation */}
+			<nav className='hidden lg:flex md:gap-6 items-center'>
+				<Link href='/' prefetch={true}>
+					<Image src='/logo.png' alt='logo' width={80} height={80} />
+				</Link>
+				{navLinks.map((link) => (
+					<NavLink key={link.href} href={link.href} label={link.label} />
+				))}
+				<FetchDataMenu />
 			</nav>
+
+			{/* User Authentication & Mode Toggle */}
 			<div className='flex items-center space-x-4'>
 				{session?.user ? (
-					<Button onClick={() => signOut()} variant={'outline'} className=' px-4 py-2 rounded-md text-sm font-medium'>
+					<Button onClick={() => signOut()} variant='outline' className='px-4 py-2 rounded-md text-sm font-medium'>
 						Logout
 					</Button>
 				) : (
 					<Link href='/login'>
-						<Button variant={'outline'} className=' px-4 py-2 rounded-md text-sm font-medium'>
+						<Button variant='outline' className='px-4 py-2 rounded-md text-sm font-medium'>
 							Login
 						</Button>
 					</Link>
 				)}
-
 				<ModeToggle />
 			</div>
 		</header>
