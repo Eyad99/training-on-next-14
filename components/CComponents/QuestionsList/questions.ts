@@ -33,7 +33,7 @@ import RealTimeApps from './Answers/realTimeApps';
 import TestWays from './Answers/testWays';
   import CiCd from './Answers/ciCd';
 import ServiceWorkerCom from './Answers/serviceWorkerCom';
-
+ 
 export const qsList = [
 	{
 		id: 1,
