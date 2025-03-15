@@ -28,18 +28,12 @@ export default function RootLayout({
 				<head>
 					<link rel='icon' href='/next.svg' sizes='any' />
 				</head>
-				<body className={inter.className + ' bg-gray-50'}>
+				<body className={inter.className + ' bg-gray-50 dark:bg-secondary'}>
 					<ReactQueryProvider>
 						<HydrationBoundary state={dehydrate(queryClient)}>
 							<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
 								<Header />
-
-								<section className='container mx-auto my-4'>
-									<div className='grid auto-rows-min gap-4 grid-cols-12'>
-										<div className='rounded-md md:col-span-4 col-span-12 bg-fuchsia-300'>Info</div>
-										<div className='rounded-md md:col-span-8 col-span-12 bg-slate-300'>{children}</div>
-									</div>
-								</section>
+								<section className='container mx-auto  mt-20'>{children}</section>
 							</ThemeProvider>
 						</HydrationBoundary>
 					</ReactQueryProvider>

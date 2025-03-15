@@ -1,21 +1,25 @@
+'use client';
 import React from 'react';
-import { TabsContent } from '@radix-ui/react-tabs';
 import { qsList } from '../questions';
+import { useSearchParams } from 'next/navigation';
 
 const QuestionsAnswers = () => {
+	const searchParams = useSearchParams();
+	const qs = searchParams.get('qs');
+
+	const matchedItem = qsList.find((list) => list?.param === qs);
+
+	if (!matchedItem) {
+		return <div>not-found</div>;
+	}
+
 	return (
-		<div>
-			{qsList?.map((list) => {
-				return (
-					<TabsContent key={list?.id} value={`${list?.id}`}>
-						{typeof list.description === 'string' ? (
-							<div className='text-muted-foreground' dangerouslySetInnerHTML={{ __html: list.description }} />
-						) : (
-							React.createElement(list.description)
-						)}{' '}
-					</TabsContent>
-				);
-			})}
+		<div key={matchedItem?.id}>
+			{typeof matchedItem.description === 'string' ? (
+				<div className='text-muted-foreground' dangerouslySetInnerHTML={{ __html: matchedItem.description }} />
+			) : (
+				React.createElement(matchedItem.description)
+			)}
 		</div>
 	);
 };

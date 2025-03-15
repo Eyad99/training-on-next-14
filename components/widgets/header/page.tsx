@@ -18,7 +18,7 @@ import {
 
 const navLinks = [
 	{ href: '/', label: 'Home' },
-	{ href: '/questions', label: 'Questions' },
+	{ href: '/questions?qs=react', label: 'Questions' },
 	{ href: '/indexed-db', label: 'IndexedDB' },
 	{ href: '/english', label: 'English' },
 ];
@@ -73,7 +73,8 @@ export default function Header() {
 	const { data: session } = useSession();
 
 	return (
-		<header className='flex sticky top-0 shadow-md z-10 items-center justify-between h-16 px-4 md:px-6'>
+		<header className='fixed top-0 left-0 w-full shadow-md z-50 bg-gray-50 dark:bg-secondary flex items-center justify-between h-16 px-4 md:px-6'>
+			{/* // <header className='flex sticky top-0 shadow-md z-10 bg-gray-50 dark:bg-secondary  items-center justify-between h-16 px-4 md:px-6'> */}
 			{/* Small Screen Navigation */}
 			<Sheet>
 				<SheetTrigger asChild>
