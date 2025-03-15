@@ -32,7 +32,7 @@ import HooksInReact from './Answers/hooksInReact';
 import RealTimeApps from './Answers/realTimeApps';
 import TestWays from './Answers/testWays';
 import CiCd from './Answers/ciCd';
-import ServiceWorkerCom from './Answers/serviceWorkerCom';
+// import ServiceWorkerCom from './Answers/serviceWorkerCom';
 
 export const qsList = [
 	{
@@ -148,11 +148,11 @@ export const qsList = [
 		title: 'Typescript',
 		description: Typescript,
 	},
-	{
-		id: 31,
-		title: 'Service Worker',
-		description: ServiceWorkerCom,
-	},
+	// {
+	// 	id: 31,
+	// 	title: 'Service Worker',
+	// 	description: ServiceWorkerCom,
+	// },
 	{
 		id: 32,
 		title: 'Image Middleware',
