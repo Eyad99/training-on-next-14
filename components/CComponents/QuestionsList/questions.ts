@@ -19,7 +19,7 @@ import MeaningReact from './Answers/react';
 import ReactAndReactDom from './Answers/reactAndReactDom';
 import RemAndEm from './Answers/remAndEm';
 import ServerComponentAndServerAction from './Answers/serverComponentAndServerAction';
- import SiteMap from './Answers/siteMap';
+import SiteMap from './Answers/siteMap';
 import Solid from './Answers/solid';
 import RenderingPatterns from './Answers/renderingPatterns';
 import State from './Answers/state';
@@ -31,9 +31,9 @@ import CacheInFetchMethod from './Answers/cacheInFetchMethod';
 import HooksInReact from './Answers/hooksInReact';
 import RealTimeApps from './Answers/realTimeApps';
 import TestWays from './Answers/testWays';
-  import CiCd from './Answers/ciCd';
+import CiCd from './Answers/ciCd';
 import ServiceWorkerCom from './Answers/serviceWorkerCom';
- 
+
 export const qsList = [
 	{
 		id: 1,
