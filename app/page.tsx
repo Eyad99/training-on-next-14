@@ -1,12 +1,27 @@
-import React from 'react';
+import { User_Res } from '@/core/models/page';
+import { getUsers } from '@/core/services/page';
+import React, { Suspense } from 'react';
 
 export default async function Home() {
+	const fetchUsers = async () => {
+		try {
+			const response = await fetch('https://jsonplaceholder.typicode.com/users', { cache: 'no-store' });
+			const data = await response.json();
+			return data;
+		} catch (error: any) {
+			console.error(error.message);
+		}
+	};
+
+	const data: User_Res[] = await fetchUsers();
+
 	return (
-		<div className='grid auto-rows-min gap-4 grid-cols-12'>
-			<div className='rounded-md md:col-span-4 col-span-12 bg-fuchsia-300'>Personal info</div>
-			<div className='rounded-md md:col-span-8 col-span-12 bg-slate-300'>
-				<h1 className='text-2xl text-center font-bold'>Home Page</h1>
-			</div>
-		</div>
+		<>
+			{data?.map((item: User_Res) => (
+				<div key={item.id}>
+					<h5>{item.name}</h5>
+				</div>
+			))}
+		</>
 	);
 }

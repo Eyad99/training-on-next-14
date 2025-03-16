@@ -34,6 +34,7 @@ import TestWays from './Answers/testWays';
 import CiCd from './Answers/ciCd';
 // import ServiceWorkerCom from './Answers/serviceWorkerCom';
 import Hydration from './Answers/hydration';
+import AsyncAndPromise from './Answers/asyncAndPromise';
 
 export const qsList = [
 	{
@@ -324,5 +325,11 @@ export const qsList = [
 		title: 'Hydration',
 		param: 'hydration',
 		description: Hydration,
+	},
+	{
+		id: 48,
+		title: 'Async|Awite And Promise',
+		param: 'asyncawite-and-promise',
+		description: AsyncAndPromise,
 	},
 ];
