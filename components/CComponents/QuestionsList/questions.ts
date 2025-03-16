@@ -32,7 +32,8 @@ import HooksInReact from './Answers/hooksInReact';
 import RealTimeApps from './Answers/realTimeApps';
 import TestWays from './Answers/testWays';
 import CiCd from './Answers/ciCd';
-import ServiceWorkerCom from './Answers/serviceWorkerCom';
+// import ServiceWorkerCom from './Answers/serviceWorkerCom';
+import Hydration from './Answers/hydration';
 
 export const qsList = [
 	{
@@ -226,7 +227,7 @@ export const qsList = [
 		id: 31,
 		title: 'Service Worker',
 		param: 'service-worker',
-		description: ServiceWorkerCom,
+		// description: ServiceWorkerCom,
 	},
 	{
 		id: 32,
@@ -317,5 +318,11 @@ export const qsList = [
 		title: 'CI & CD',
 		param: 'ci-and-cd',
 		description: CiCd,
+	},
+	{
+		id: 47,
+		title: 'Hydration',
+		param: 'hydration',
+		description: Hydration,
 	},
 ];
