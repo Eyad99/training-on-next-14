@@ -18,7 +18,7 @@ const QuestionsAnswers = () => {
 			{typeof matchedItem.description === 'string' ? (
 				<div className='text-muted-foreground' dangerouslySetInnerHTML={{ __html: matchedItem.description }} />
 			) : (
-				React.createElement(matchedItem.description)
+				React.createElement(matchedItem.description!)
 			)}
 		</div>
 	);
