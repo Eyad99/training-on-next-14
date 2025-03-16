@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import QuestionsAnswers from '@/components/CComponents/QuestionsList/Answers/page';
 import QuestionsList from '@/components/CComponents/QuestionsList/page';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -34,7 +34,9 @@ const Questions = () => {
 			</div>
 
 			<div className='rounded-md md:col-span-8 col-span-12 shadow-md border p-4'>
-				<QuestionsAnswers />
+				<Suspense fallback={<p>Loading...</p>}>
+					<QuestionsAnswers />
+				</Suspense>
 			</div>
 		</div>
 	);
