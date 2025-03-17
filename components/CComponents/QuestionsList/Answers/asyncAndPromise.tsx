@@ -6,31 +6,31 @@ const AsyncAndPromise = () => {
 			<table className='text-rtl'>
 				<thead>
 					<tr>
-						<th>async/await</th>
-						<th>Promises (.then/.catch) </th>
 						<th>الميزة</th>
+						<th>Promises (.then/.catch) </th>
+						<th>async/await</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>أسهل وأوضح</td>
-						<td>أقل وضوحًا، معقدة عند التداخل </td>
 						<td>سهولة القراءة </td>
+						<td>أقل وضوحًا، معقدة عند التداخل </td>
+						<td>أسهل وأوضح</td>
 					</tr>
 					<tr>
-						<td>باستخدام try...catch</td>
-						<td>باستخدام .catch() </td>
 						<td>معالجة الأخطاء </td>
+						<td>باستخدام .catch() </td>
+						<td>باستخدام try...catch</td>
 					</tr>
 					<tr>
-						<td>يعتمد على Promise نفسه</td>
-						<td>يعتمد على Promise نفسه</td>
 						<td>الأداء</td>
+						<td>يعتمد على Promise نفسه</td>
+						<td>يعتمد على Promise نفسه</td>
 					</tr>
 					<tr>
-						<td>عندما تحتاج إلى تنفيذ العمليات بالتتابع بطريقة سهلة</td>
-						<td>عند الحاجة إلى تشغيل عدة عمليات غير متزامنة بالتوازي </td>
 						<td>الاستخدام المناسب </td>
+						<td>عند الحاجة إلى تشغيل عدة عمليات غير متزامنة بالتوازي </td>
+						<td>عندما تحتاج إلى تنفيذ العمليات بالتتابع بطريقة سهلة</td>
 					</tr>
 				</tbody>
 			</table>

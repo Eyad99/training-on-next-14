@@ -35,6 +35,8 @@ import CiCd from './Answers/ciCd';
 // import ServiceWorkerCom from './Answers/serviceWorkerCom';
 import Hydration from './Answers/hydration';
 import AsyncAndPromise from './Answers/asyncAndPromise';
+import LazyLoading from './Answers/lazyLoading';
+import ControllerAndUncontroller from './Answers/controllerAndUncontroller';
 
 export const qsList = [
 	{
@@ -331,5 +333,17 @@ export const qsList = [
 		title: 'Async|Awite And Promise',
 		param: 'asyncawite-and-promise',
 		description: AsyncAndPromise,
+	},
+	{
+		id: 49,
+		title: 'Lazy Loading',
+		param: 'lazy-loading',
+		description: LazyLoading,
+	},
+	{
+		id: 50,
+		title: 'Controller And Uncontroller',
+		param: 'controller-and-uncontroller',
+		description: ControllerAndUncontroller,
 	},
 ];
