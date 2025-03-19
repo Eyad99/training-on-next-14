@@ -37,6 +37,8 @@ import Hydration from './Answers/hydration';
 import AsyncAndPromise from './Answers/asyncAndPromise';
 import LazyLoading from './Answers/lazyLoading';
 import ControllerAndUncontroller from './Answers/controllerAndUncontroller';
+import Suspense from './Answers/suspense';
+ import ReactLazyAndDynamic from './Answers/ReactlazyAndDynamic';
 
 export const qsList = [
 	{
@@ -334,16 +336,29 @@ export const qsList = [
 		param: 'asyncawite-and-promise',
 		description: AsyncAndPromise,
 	},
+
 	{
 		id: 49,
+		title: 'Controller And Uncontroller',
+		param: 'controller-and-uncontroller',
+		description: ControllerAndUncontroller,
+	},
+	{
+		id: 50,
 		title: 'Lazy Loading',
 		param: 'lazy-loading',
 		description: LazyLoading,
 	},
 	{
-		id: 50,
-		title: 'Controller And Uncontroller',
-		param: 'controller-and-uncontroller',
-		description: ControllerAndUncontroller,
+		id: 51,
+		title: 'Suspense',
+		param: 'suspense',
+		description: Suspense,
+	},
+	{
+		id: 52,
+		title: 'React Lazy And Dynamic',
+		param: 'react-lazy-and-dynamic',
+		description: ReactLazyAndDynamic,
 	},
 ];

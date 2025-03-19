@@ -5,7 +5,7 @@ const ControllerAndUncontroller = () => {
 	return (
 		<div className='flex flex-col gap-4'>
 			<h4 className='font-bold text-2xl text-rtl'>🔹 الفرق بين Controlled و Uncontrolled Components في React</h4>
-			<ul className='text-rtl'>
+			<ul className='text-rtl list-none'>
 				<li className='font-bold list-none'> ✅ 1. Controlled Component (المُتحكم به)</li>
 				<li>يتم تخزين البيانات في state وإدارتها عبر React.</li>
 				<li>كل تغيير في المدخلات يتم تخزينه داخل حالة (state) المكون.</li>
@@ -35,7 +35,7 @@ export default function ControlledEditor() {
                 `}
 			/>
 
-			<ul className='text-rtl'>
+			<ul className='text-rtl list-none'>
 				<li className='font-bold list-none'>✅ 2. Uncontrolled Component (غير المُتحكم به)</li>
 				<li>يتم تخزين البيانات داخل DOM مباشرةً باستخدام ref.</li>
 				<li>React لا يتحكم في القيم، بل يتم الوصول إليها فقط عند الحاجة.</li>
