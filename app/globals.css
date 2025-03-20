@@ -78,6 +78,10 @@
 		direction: rtl;
 		unicode-bidi: embed;
 	}
+	.text-ltr {
+		direction: ltr;
+		unicode-bidi: embed;
+	}
 
 	@layer utilities {
 		/* Hide scrollbar for Chrome, Safari and Opera */

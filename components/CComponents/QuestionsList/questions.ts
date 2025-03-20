@@ -39,6 +39,7 @@ import LazyLoading from './Answers/lazyLoading';
 import ControllerAndUncontroller from './Answers/controllerAndUncontroller';
 import Suspense from './Answers/suspense';
  import ReactLazyAndDynamic from './Answers/ReactlazyAndDynamic';
+import DesignPatterns from './Answers/designPatterns';
 
 export const qsList = [
 	{
@@ -360,5 +361,11 @@ export const qsList = [
 		title: 'React Lazy And Dynamic',
 		param: 'react-lazy-and-dynamic',
 		description: ReactLazyAndDynamic,
+	},
+	{
+		id: 53,
+		title: 'Design Patterns',
+		param: 'design-patterns',
+		description: DesignPatterns,
 	},
 ];

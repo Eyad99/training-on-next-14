@@ -32,17 +32,52 @@ const myTheme = createTheme({
 });
 
 const CodeMirrorEditor = ({ value }: { value: string }) => {
+	const editorRef = React.useRef(null);
+
+	// const handleCopy = () => {
+	// 	if (editorRef.current) {
+	// 		const content = editorRef.current.view.state.doc.toString() as any;
+	// 		navigator.clipboard
+	// 			.writeText(content)
+	// 			.then(() => {
+	// 				alert('تم نسخ النص إلى الحافظة!');
+	// 			})
+	// 			.catch((err) => {
+	// 				console.error('فشل النسخ: ', err);
+	// 			});
+	// 	}
+	// };
+
 	return (
-		<CodeMirror
-			className='border border-muted'
-			value={value}
-			height='auto'
-			theme={myTheme}
-			extensions={[javascript({ jsx: true, typescript: true })]}
-			// onChange={(value, viewUpdate) => {
-			// 	console.log('value:', value);
-			// }}
-		/>
+		<div>
+			{/* <button
+				onClick={handleCopy}
+				style={{
+					marginBottom: '10px',
+					padding: '8px 16px',
+					backgroundColor: '#007bff',
+					color: '#fff',
+					border: 'none',
+					borderRadius: '4px',
+					cursor: 'pointer',
+				}}
+			>
+				copy{' '}
+			</button> */}
+			<CodeMirror
+				ref={editorRef}
+				className='border border-muted'
+				value={value}
+				height='auto'
+				theme={myTheme}
+				extensions={[javascript({ jsx: true, typescript: true })]}
+				style={{ direction: 'ltr', textAlign: 'left' }}
+
+				// onChange={(value, viewUpdate) => {
+				// 	console.log('value:', value);
+				// }}
+			/>
+		</div>
 	);
 };
 
