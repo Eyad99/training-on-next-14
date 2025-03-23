@@ -40,6 +40,7 @@ import Suspense from './Answers/suspense';
  import ReactLazyAndDynamic from './Answers/ReactlazyAndDynamic';
 import DesignPatterns from './Answers/designPatterns';
 import ServiceWorkerCom from './Answers/serviceWorker';
+import EventLoop from './Answers/eventLoop';
  
 export const qsList = [
 	{
@@ -367,5 +368,11 @@ export const qsList = [
 		title: 'Design Patterns',
 		param: 'design-patterns',
 		description: DesignPatterns,
+	},
+	{
+		id: 54,
+		title: 'Event Loop',
+		param: 'event-loop',
+		description: EventLoop,
 	},
 ];
