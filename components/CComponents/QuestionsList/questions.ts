@@ -39,8 +39,8 @@ import ControllerAndUncontroller from './Answers/controllerAndUncontroller';
 import Suspense from './Answers/suspense';
  import ReactLazyAndDynamic from './Answers/ReactlazyAndDynamic';
 import DesignPatterns from './Answers/designPatterns';
-import ServiceWorkerCom from './Answers/serviceWorkerCom';
-
+import ServiceWorkerCom from './Answers/serviceWorker';
+ 
 export const qsList = [
 	{
 		id: 1,
