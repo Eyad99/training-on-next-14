@@ -4,7 +4,7 @@ import React from 'react';
 const ServiceWorkerCom = () => {
 	return (
 		<div className='flex flex-col'>
-			<h4 className='font-bold text-3xl'>Service Worker</h4>
+			{/* <h4 className='font-bold text-3xl'>Service Worker</h4>
 			<span className='text-muted-foreground'>
 				Service worker is a script that works on the background of Javascript apps on a different thread
 			</span>
@@ -54,7 +54,7 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
   })
 }`}
-			/>
+			/> */}
 		</div>
 	);
 };

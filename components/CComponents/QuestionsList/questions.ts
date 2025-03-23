@@ -32,14 +32,14 @@ import HooksInReact from './Answers/hooksInReact';
 import RealTimeApps from './Answers/realTimeApps';
 import TestWays from './Answers/testWays';
 import CiCd from './Answers/ciCd';
-// import ServiceWorkerCom from './Answers/serviceWorkerCom';
-import Hydration from './Answers/hydration';
+ import Hydration from './Answers/hydration';
 import AsyncAndPromise from './Answers/asyncAndPromise';
 import LazyLoading from './Answers/lazyLoading';
 import ControllerAndUncontroller from './Answers/controllerAndUncontroller';
 import Suspense from './Answers/suspense';
  import ReactLazyAndDynamic from './Answers/ReactlazyAndDynamic';
 import DesignPatterns from './Answers/designPatterns';
+import ServiceWorkerCom from './Answers/serviceWorkerCom';
 
 export const qsList = [
 	{
@@ -233,7 +233,7 @@ export const qsList = [
 		id: 31,
 		title: 'Service Worker',
 		param: 'service-worker',
-		// description: ServiceWorkerCom,
+		description: ServiceWorkerCom,
 	},
 	{
 		id: 32,
