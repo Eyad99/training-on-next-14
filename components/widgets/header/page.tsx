@@ -19,7 +19,7 @@ import {
 const navLinks = [
 	{ href: '/', label: 'Home' },
 	{ href: '/questions?qs=react', label: 'Questions' },
-	{ href: '/indexed-db', label: 'IndexedDB' },
+	{ href: '/technologies', label: 'Technologies' },
 	{ href: '/english', label: 'English' },
 ];
 
@@ -55,7 +55,7 @@ function FetchDataMenu() {
 			<DropdownMenuContent className='w-56'>
 				{fetchDataLinks.map((link, index) => (
 					<>
-						<DropdownMenuItem key={link.href} onClick={() => router.push(link.href)}>
+						<DropdownMenuItem key={link.href + index} onClick={() => router.push(link.href)}>
 							<LifeBuoy className='mr-2 h-4 w-4' />
 							<Link href={link.href} prefetch={false}>
 								{link.label}

@@ -25,6 +25,7 @@ const TextField: React.FC<InputProps | TextFieldProps> = ({
 	divClassName = 'mb-2',
 	...props
 }: any) => {
+	console.log('helperText', helperText, error);
 	return (
 		<div className={divClassName}>
 			<div className='grid w-full items-center gap-1.5'>
