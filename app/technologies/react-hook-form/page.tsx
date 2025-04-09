@@ -39,7 +39,7 @@ const ReactHookForm = () => {
 	const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
 
 	return (
-		<div>
+		<div className='container mx-auto px-10'>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<TextField
 					type='text'
@@ -50,7 +50,7 @@ const ReactHookForm = () => {
 				/>
 				<TextField
 					type='email'
-					label={`exampleRequired`}
+					label={`Email`}
 					error={!!errors.email}
 					helperText={errors.email?.message}
 					{...register('email', { required: true })}

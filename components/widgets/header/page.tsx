@@ -2,32 +2,18 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
-import { signOut, useSession } from 'next-auth/react';
-import { Aperture, MenuIcon, LifeBuoy } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { ModeToggle } from '@/components/mode-toggle';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+import { signOut, useSession } from 'next-auth/react';
+import { Aperture, MenuIcon } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { ModeToggle } from '@/components/mode-toggle';
+import { Button } from '@/components/ui/button';
 
 const navLinks = [
 	{ href: '/', label: 'Home' },
 	{ href: '/questions?qs=react', label: 'Questions' },
 	{ href: '/technologies', label: 'Technologies' },
 	{ href: '/english', label: 'English' },
-];
-
-const fetchDataLinks = [
-	{ href: '/fetch-data/without-react-query', label: 'Without React Query' },
-	{ href: '/fetch-data/with-react-query', label: 'With React Query' },
-	{ href: '/fetch-data/users-server', label: 'Server Component' },
-	{ href: '/fetch-data/server-action', label: 'Server Action' },
 ];
 
 function NavLink({ href, label }: { href: string; label: string }) {
@@ -40,32 +26,6 @@ function NavLink({ href, label }: { href: string; label: string }) {
 		>
 			{label}
 		</Link>
-	);
-}
-
-function FetchDataMenu() {
-	const router = useRouter();
-	return (
-		<DropdownMenu>
-			<DropdownMenuTrigger asChild>
-				<Button variant='link' className='p-0 h-fit text-[16px] text-foreground/60'>
-					Fetch Data
-				</Button>
-			</DropdownMenuTrigger>
-			<DropdownMenuContent className='w-56'>
-				{fetchDataLinks.map((link, index) => (
-					<>
-						<DropdownMenuItem key={link.href + index} onClick={() => router.push(link.href)}>
-							<LifeBuoy className='mr-2 h-4 w-4' />
-							<Link href={link.href} prefetch={false}>
-								{link.label}
-							</Link>
-						</DropdownMenuItem>
-						{index < fetchDataLinks.length - 1 && <DropdownMenuSeparator />}
-					</>
-				))}
-			</DropdownMenuContent>
-		</DropdownMenu>
 	);
 }
 
@@ -93,7 +53,6 @@ export default function Header() {
 						{navLinks.map((link) => (
 							<NavLink key={link.href} href={link.href} label={link.label} />
 						))}
-						<FetchDataMenu />
 					</nav>
 				</SheetContent>
 			</Sheet>
@@ -106,7 +65,6 @@ export default function Header() {
 				{navLinks.map((link) => (
 					<NavLink key={link.href} href={link.href} label={link.label} />
 				))}
-				<FetchDataMenu />
 			</nav>
 
 			{/* User Authentication & Mode Toggle */}
