@@ -1,21 +1,28 @@
 import React from 'react';
 
+interface SectionItemProps {
+	title: string;
+	description: string;
+}
+
+const SectionItem = ({ title, description }: SectionItemProps) => (
+	<div className='flex flex-col gap-2'>
+		<h4 className='font-bold text-2xl'>{title}</h4>
+		<p className='text-muted-foreground'>{description}</p>
+	</div>
+);
+
 const AsyncAndSync = () => {
 	return (
-		<section className='flex flex-col gap-4'>
-			<div className='flex flex-col'>
-				<h4 className='font-bold text-3xl'>Asynchronous</h4>
-				<span className='text-muted-foreground'>
-					Programming method where operations are run independently allowing the program to continue running while waiting for certain tasks
-					to complete
-				</span>
-			</div>
-			<div className='flex flex-col'>
-				<h4 className='font-bold text-3xl'>Synchronous</h4>
-				<span className='text-muted-foreground'>
-					Programming approach where tasks of a program are executed sequentially one at a time.
-				</span>
-			</div>
+		<section className='flex flex-col gap-6'>
+			<SectionItem
+				title='Asynchronous'
+				description='Programming method where operations are run independently allowing the program to continue running while waiting for certain tasks to complete'
+			/>
+			<SectionItem
+				title='Synchronous'
+				description='Programming approach where tasks of a program are executed sequentially one at a time.'
+			/>
 		</section>
 	);
 };

@@ -1,31 +1,102 @@
-import { Textarea } from '@/components/ui/textarea';
 import React from 'react';
+
+interface SectionItemProps {
+	title: string;
+	description: string;
+}
+
+const SectionItem = ({ title, description }: SectionItemProps) => (
+	<div className='flex flex-col gap-2'>
+		<h3 className='font-bold text-2xl text-rtl'>{title}</h3>
+		<p className='text-muted-foreground text-rtl'>{description}</p>
+	</div>
+);
+
+interface FeatureItemProps {
+	title: string;
+	description: string;
+	features?: string[];
+}
+
+const FeatureItem = ({ title, description, features }: FeatureItemProps) => (
+	<div className='flex flex-col gap-2'>
+		<h4 className='font-bold text-lg text-rtl'>{title}</h4>
+		<p className='text-muted-foreground text-rtl'>{description}</p>
+		{features && features.length > 0 && (
+			<ul className='flex flex-col gap-1 px-4'>
+				{features.map((feature, index) => (
+					<li key={index} className='text-muted-foreground text-rtl'>
+						• {feature}
+					</li>
+				))}
+			</ul>
+		)}
+	</div>
+);
 
 const ServerComponentAndServerAction = () => {
 	return (
-		<div className='flex flex-col gap-6'>
-			<Textarea
-				className='min-h-[250px]'
-				value={`في Next.js: هناك مفهومان رئيسيان للتعامل مع البيانات وتنفيذ العمليات على الخادم: مكونات الخادم (Server Components) وإجراءات الخادم
-				(Server Actions). مكونات الخادم (Server Components): التنفيذ على الخادم: يتم تنفيذ هذه المكونات بالكامل على الخادم، مما يقلل من حجم
-				JavaScript المرسل إلى العميل ويحسّن الأداء. جلب البيانات: يمكن لهذه المكونات جلب البيانات مباشرةً من قواعد البيانات أو واجهات برمجة
-				التطبيقات دون الحاجة إلى استخدام دوال مثل getServerSideProps. الاستخدام: تُستخدم لعرض المحتوى الثابت أو شبه الثابت الذي لا يتطلب
-				تفاعلات فورية من المستخدم. إجراءات الخادم (Server Actions): التنفيذ على الخادم: هي دوال غير متزامنة (async) يتم تعريفها باستخدام
-				التوجيه "use server"، مما يضمن تنفيذها على الخادم فقط. التعامل مع التفاعلات: تُستخدم لمعالجة التفاعلات مثل إرسال النماذج أو تحديث
-				البيانات. يمكن استدعاؤها من مكونات العميل (Client Components) أو مكونات الخادم. المرونة: يمكن تعريفها داخل المكونات أو في ملفات
-				منفصلة لإعادة الاستخدام. الاختلافات الرئيسية: الغرض: مكونات الخادم تُستخدم لعرض المحتوى، بينما إجراءات الخادم تُستخدم لمعالجة
-				التفاعلات وتحديث البيانات. التنفيذ: مكونات الخادم هي مكونات React تُنفّذ على الخادم، في حين أن إجراءات الخادم هي دوال تُنفّذ على
-				الخادم ويمكن استدعاؤها من المكونات. التفاعل مع العميل: يمكن استدعاء إجراءات الخادم من مكونات العميل، مما يتيح معالجة التفاعلات دون
-				الحاجة إلى واجهات برمجة تطبيقات منفصلة.`}
+		<section className='flex flex-col gap-6 text-rtl'>
+			<SectionItem
+				title='مكونات الخادم (Server Components)'
+				description='مكونات React التي تُنفّذ بالكامل على الخادم، مما يقلل من حجم JavaScript المرسل إلى العميل ويحسّن الأداء.'
 			/>
 
-			<Textarea
-				className='min-h-[250px]'
-				value={`باختصار: مكونات الخادم تُستخدم لعرض المحتوى الذي يُعالج على الخادم، مما يُقلل من حجم JavaScript على العميل ويحسّن الأداء. من ناحية
-				أخرى، تُستخدم إجراءات الخادم لتنفيذ وظائف على الخادم استجابةً لتفاعلات المستخدم، مما يُوفّر أمانًا أكبر وإدارة أفضل للتفاعلات
-				الحساسة.`}
+			<FeatureItem
+				title='المميزات الرئيسية:'
+				description='مكونات الخادم تتميز بعدة خصائص تجعلها مثالية لعرض المحتوى الثابت أو شبه الثابت.'
+				features={[
+					'التنفيذ الكامل على الخادم',
+					'جلب البيانات مباشرةً من قواعد البيانات أو واجهات برمجة التطبيقات',
+					'لا تحتاج إلى استخدام دوال مثل getServerSideProps',
+					'مثالية لعرض المحتوى الثابت أو شبه الثابت',
+				]}
 			/>
-		</div>
+
+			<SectionItem
+				title='إجراءات الخادم (Server Actions)'
+				description='دوال غير متزامنة (async) تُنفّذ على الخادم وتُستخدم لمعالجة التفاعلات وتحديث البيانات.'
+			/>
+
+			<FeatureItem
+				title='المميزات الرئيسية:'
+				description='إجراءات الخادم توفر طريقة آمنة وفعالة للتعامل مع التفاعلات على الخادم.'
+				features={[
+					'تُعرّف باستخدام التوجيه "use server"',
+					'تُستخدم لمعالجة التفاعلات مثل إرسال النماذج',
+					'يمكن استدعاؤها من مكونات العميل أو مكونات الخادم',
+					'يمكن تعريفها داخل المكونات أو في ملفات منفصلة',
+				]}
+			/>
+
+			<SectionItem title='الاختلافات الرئيسية' description='هناك فروق جوهرية بين مكونات الخادم وإجراءات الخادم من حيث الغرض والتنفيذ.' />
+
+			<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+				<FeatureItem
+					title='الغرض'
+					description='الاستخدام الرئيسي لكل منهما'
+					features={['مكونات الخادم: لعرض المحتوى', 'إجراءات الخادم: لمعالجة التفاعلات وتحديث البيانات']}
+				/>
+
+				<FeatureItem
+					title='التنفيذ'
+					description='كيفية تنفيذ كل منهما'
+					features={['مكونات الخادم: مكونات React تُنفّذ على الخادم', 'إجراءات الخادم: دوال تُنفّذ على الخادم ويمكن استدعاؤها من المكونات']}
+				/>
+
+				<FeatureItem
+					title='التفاعل مع العميل'
+					description='كيفية التعامل مع مكونات العميل'
+					features={['مكونات الخادم: تُنفّذ على الخادم فقط', 'إجراءات الخادم: يمكن استدعاؤها من مكونات العميل']}
+				/>
+
+				<FeatureItem
+					title='الأداء'
+					description='تأثير كل منهما على أداء التطبيق'
+					features={['مكونات الخادم: تقلل حجم JavaScript على العميل', 'إجراءات الخادم: توفر أمانًا أكبر وإدارة أفضل للتفاعلات']}
+				/>
+			</div>
+		</section>
 	);
 };
 
