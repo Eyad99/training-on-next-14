@@ -1,10 +1,11 @@
 import CodeMirrorEditor from '@/components/RComponents/CodeMirrorEditor';
+import { Separator } from '@/components/ui/separator';
 import React from 'react';
 
 const TestWays = () => {
 	return (
 		<div className='flex flex-col gap-4'>
-			<div className='flex flex-col gap-2'>
+			<div className='flex flex-col gap-2 text-rtl'>
 				<div className='flex flex-col'>
 					<h4 className='font-bold text-2xl'>Jest [Automation test]</h4>
 					<span className='text-muted-foreground text-rtl'>
@@ -25,6 +26,17 @@ const TestWays = () => {
 					<span className='text-muted-foreground text-rtl'>اختبار المكونات (Components).</span>
 					<span className='text-muted-foreground text-rtl'>اختبار الحالات المنطقية (Logic) داخل التطبيق</span>
 				</div>
+
+				<div className='flex flex-col'>
+					<span className='text-muted-foreground text-rtl'>
+						describe: تُستخدم لتجميع مجموعة من الاختبارات المتعلقة بوظيفة أو وحدة معينة.
+					</span>
+					<span className='text-muted-foreground text-rtl'>test (أو it): تُحدد حالة اختبار واحدة.</span>
+					<span className='text-muted-foreground text-rtl'>expect: تُستخدم للتحقق من النتيجة المتوقعة.</span>
+					<span className='text-muted-foreground text-rtl'>
+						toBe: أحد الـ matchers التي تتحقق إذا كانت القيمة الفعلية تتطابق مع القيمة المتوقعة.
+					</span>
+				</div>
 				<CodeMirrorEditor
 					value={`import { render, screen } from '@testing-library/react';
                     import Button from './Button';
@@ -36,7 +48,98 @@ const TestWays = () => {
                     });
                     `}
 				/>
+
+				<CodeMirrorEditor
+					value={`
+						// __tests__/api.test.js
+import fetchUser from '../src/api';
+
+// محاكاة fetch العالمية
+global.fetch = jest.fn();
+
+describe('fetchUser function', () => {
+  // تنظيف المحاكاة قبل كل اختبار
+  beforeEach(() => {
+    fetch.mockClear();
+  });
+
+  test('fetches user data successfully', async () => {
+    // تحديد البيانات المحاكاة
+    const mockUser = {
+      id: 1,
+      name: 'Leanne Graham',
+      email: 'Sincere@april.biz',
+    };
+
+    // محاكاة استجابة fetch ناجحة
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: jest.fn().mockResolvedValueOnce(mockUser),
+    });
+
+    // استدعاء الدالة
+    const user = await fetchUser(1);
+
+    // التحقق من النتائج
+    expect(user).toEqual(mockUser);
+    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(fetch).toHaveBeenCalledWith('https://jsonplaceholder.typicode.com/users/1');
+  });
+
+  test('handles fetch error', async () => {
+    // محاكاة استجابة فاشلة
+    fetch.mockResolvedValueOnce({
+      ok: false,
+    });
+
+    // التحقق من رمي الخطأ
+    await expect(fetchUser(1)).rejects.toThrow('Failed to fetch user');
+    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(fetch).toHaveBeenCalledWith('https://jsonplaceholder.typicode.com/users/1');
+  });
+
+  test('handles network error', async () => {
+    // محاكاة خطأ شبكة (مثل انقطاع الاتصال)
+    fetch.mockRejectedValueOnce(new Error('Network Error'));
+
+    // التحقق من رمي الخطأ
+    await expect(fetchUser(1)).rejects.toThrow('Network Error');
+    expect(fetch).toHaveBeenCalledTimes(1);
+  });
+});
+                    `}
+				/>
+
+				<div className='flex flex-col'>
+					<h6 className='font-bold text-rtl'>شرح الكود:</h6>
+					<span className='text-muted-foreground text-rtl'>محاكاة fetch:</span>
+					<span className='text-muted-foreground text-rtl'>
+						نستخدم global.fetch = jest.fn() لمحاكاة الدالة العالمية fetch التي توفرها بيئة المتصفح (أو Node.js إذا كنت تستخدم بيئة مثل
+						node-fetch).
+					</span>
+					<span className='text-muted-foreground text-rtl'>هذا يسمح لنا بالتحكم في استجابات fetch دون الحاجة للاتصال بالإنترنت.</span>
+
+					<span className='text-muted-foreground text-rtl'>beforeEach:</span>
+					<span className='text-muted-foreground text-rtl'>
+						نستخدم fetch.mockClear() لتنظيف المحاكاة قبل كل اختبار، لضمان أن كل اختبار يبدأ بحالة نظيفة.
+					</span>
+
+					<span className='text-muted-foreground text-rtl'>اختبار النجاح:</span>
+					<span className='text-muted-foreground text-rtl'>
+						نستخدم mockResolvedValueOnce لمحاكاة استجابة ناجحة تحتوي على كائن يحاكي استجابة fetch (مع ok: true ودالة json تُرجع البيانات).
+					</span>
+					<span className='text-muted-foreground text-rtl'>نتحقق من أن الدالة تُرجع البيانات المتوقعة باستخدام toEqual.</span>
+					<span className='text-muted-foreground text-rtl'>
+						نتحقق من أن fetch تم استدعاؤها مرة واحدة وبالرابط الصحيح باستخدام toHaveBeenCalledWith.
+					</span>
+
+					<span className='text-muted-foreground text-rtl'>اختبار الفشل:</span>
+					<span className='text-muted-foreground text-rtl'>نحاكي استجابة فاشلة (ok: false) ونتحقق من أن الدالة ترمي الخطأ المتوقع.</span>
+					<span className='text-muted-foreground text-rtl'>نحاكي خطأ شبكة باستخدام mockRejectedValueOnce ونتحقق من معالجة الخطأ.</span>
+				</div>
 			</div>
+
+			<Separator />
 
 			<div className='flex flex-col gap-2'>
 				{/* 'End To End Test [E2E test (cypress)] */}

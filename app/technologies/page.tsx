@@ -10,6 +10,7 @@ const TECHNOLOGIES = [
 	{ id: 4, name: 'Fetch Data Without ReactQuery', link: 'without-react-query' },
 	{ id: 5, name: 'Server Component', link: 'users-server' },
 	{ id: 6, name: 'Server Action', link: 'server-action' },
+	{ id: 7, name: 'Jest', link: 'jest' },
 ] as const;
 
 export default function Technologies() {
