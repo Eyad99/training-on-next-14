@@ -13,6 +13,7 @@ export { default as ImageMiddleware } from './ImageMiddleware';
 export { default as IndexedDb } from './indexedDb';
 export { default as Jsx } from './jsx';
 export { default as Memo } from './memo';
+export { default as Microfrontend } from './microfrontend';
 export { default as OocssAndBem } from './oocssAndBem';
 export { default as OptimizationTools } from './optimizationTools';
 export { default as Promises } from './promises';

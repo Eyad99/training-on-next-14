@@ -72,7 +72,7 @@ const CodeMirrorEditor = ({ value }: { value: string }) => {
 				theme={myTheme}
 				extensions={[javascript({ jsx: true, typescript: true })]}
 				style={{ direction: 'ltr', textAlign: 'left' }}
-
+				editable={false}
 				// onChange={(value, viewUpdate) => {
 				// 	console.log('value:', value);
 				// }}
