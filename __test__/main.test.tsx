@@ -1,18 +1,18 @@
 import { expect, describe, test, jest } from '@jest/globals';
 import '@testing-library/jest-dom';
-import { fetchUser, sum } from '@/app/technologies/jest/page';
+import { fetchUser, sumFn } from '@/lib/utils';
 
 describe('sum function', () => {
 	test('adds 1 + 2 to equal 3', () => {
-		expect(sum(1, 2)).toBe(3);
+		expect(sumFn(1, 2)).toBe(3);
 	});
 
 	test('adds negative numbers correctly', () => {
-		expect(sum(-1, -2)).toBe(-3);
+		expect(sumFn(-1, -2)).toBe(-3);
 	});
 
 	test('adds zero correctly', () => {
-		expect(sum(5, 0)).toBe(5);
+		expect(sumFn(5, 0)).toBe(5);
 	});
 });
 
