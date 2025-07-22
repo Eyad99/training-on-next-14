@@ -18,3 +18,13 @@ export async function POST(request: Request) {
 		return NextResponse.json({ error: 'error,message' }, { status: 500 });
 	}
 }
+
+export async function GET() {
+  try {
+    const db = client.db();
+    const count = await db.collection('users').countDocuments();
+    return NextResponse.json({ count }, { status: 200 });
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message || 'Error fetching user count' }, { status: 500 });
+  }
+}

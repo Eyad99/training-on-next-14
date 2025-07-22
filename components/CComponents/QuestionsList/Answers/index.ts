@@ -51,3 +51,4 @@ export { default as JavaScript } from './javascript';
 export { default as JsInWeb } from './jsInWeb'; 
 export { default as JsKeywords } from './jsKeywords'; 
 export { default as LocalStorageAndSession } from './localStorageAndSession'; 
+export { default as ImperativeHandler } from './imperativeHandler'; 

@@ -47,12 +47,14 @@ import {
 	Docker,
 	AutomationUi,
 	CookieAndHttpOnlyCookie,
-  Fragment,
-  JavaScript,
-  JsInWeb,
-  JsKeywords,
-  LocalStorageAndSession
+	Fragment,
+	JavaScript,
+	JsInWeb,
+	JsKeywords,
+	LocalStorageAndSession,
+	ImperativeHandler,
 } from './Answers';
+import Mcp from './Answers/mcp';
 
 interface Question {
 	id: number;
@@ -400,5 +402,17 @@ export const qsList: Question[] = [
 		title: 'Web Safety',
 		param: 'web-safty',
 		description: WebSafty,
+	},
+	{
+		id: 57,
+		title: 'Imperative Handler',
+		param: 'imperative-handler',
+		description: ImperativeHandler,
+	},
+	{
+		id: 58,
+		title: 'Model Context Protocol (MCP)',
+		param: 'mcp',
+		description: Mcp,
 	},
 ];
