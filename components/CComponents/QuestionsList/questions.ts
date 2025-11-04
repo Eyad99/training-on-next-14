@@ -54,6 +54,7 @@ import {
 	LocalStorageAndSession,
 	ImperativeHandler,
 } from './Answers';
+import compoundPattern from './Answers/compoundPattern';
 import Mcp from './Answers/mcp';
 import Vaw from './Answers/vaw';
 
@@ -421,5 +422,11 @@ export const qsList: Question[] = [
 		title: 'Vite And Webpack',
 		param: 'vaw',
 		description: Vaw,
+	},
+	{
+		id: 60,
+		title: 'Compound Pattern',
+		param: 'compound-pattern',
+		description: compoundPattern,
 	},
 ];

@@ -59,7 +59,7 @@ const Vaw = () => {
 							<tr>
 								<td className='border border-gray-300 p-2'>التحزيم (bundling) في وضع التطوير</td>
 								<td className='border border-gray-300 p-2'>نعم، يقوم بتحزيم كامل المشروع</td>
-								<td className='border border-gray-300 p-2'>نعم، يقوم بتحزيم كامل المشروع</td>
+								<td className='border border-gray-300 p-2'>لا، يستخدم ES Modules مباشرة</td>
 							</tr>
 							<tr>
 								<td className='border border-gray-300 p-2'>التحويل (transpile)</td>
