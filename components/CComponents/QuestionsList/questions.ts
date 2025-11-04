@@ -55,6 +55,7 @@ import {
 	ImperativeHandler,
 } from './Answers';
 import Mcp from './Answers/mcp';
+import Vaw from './Answers/vaw';
 
 interface Question {
 	id: number;
@@ -414,5 +415,11 @@ export const qsList: Question[] = [
 		title: 'Model Context Protocol (MCP)',
 		param: 'mcp',
 		description: Mcp,
+	},
+	{
+		id: 59,
+		title: 'Vite And Webpack',
+		param: 'vaw',
+		description: Vaw,
 	},
 ];
